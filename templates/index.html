@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>🎄 X-mas Wheel by Denny With Love</title>
+    <link rel="stylesheet" href="/static/style.css?v=final">
+</head>
+<body>
+
+<canvas id="snow"></canvas>
+
+<script>
+    const GAME_CONFIG = {{ config | tojson }};
+    const SAVED_LEADERBOARD = {{ leaderboard | tojson }};
+</script>
+
+<audio id="bgSound" loop></audio>
+
+<header>
+    🎄 Chúc mọi người giáng sinh vui vẻ !!!
+    <div id="currentPlayer"></div>
+
+    <div id="soundControl">
+        <button id="soundToggle" onclick="toggleSound()">🔊</button>
+        <input id="volumeSlider" type="range" min="0" max="100" value="30">
+    </div>
+</header>
+
+<!-- LEFT PANEL -->
+<div id="leftPanel">
+
+    <div id="resultBox">
+        🎯 Kết quả: <span id="result">---</span>
+    </div>
+
+    <div id="leaderboard">
+        <h3>🏆 Leaderboard</h3>
+        <ul id="board"></ul>
+    </div>
+
+</div>
+
+<!-- LOGIN -->
+<div id="login">
+    <input id="playerName" placeholder="Nhập tên người chơi">
+    <button onclick="startGame()">Bắt đầu</button>
+</div>
+
+<!-- WHEEL PREVIEW -->
+<div class="wheel-container">
+    <div class="pointer">▼</div>
+    <canvas id="wheel" width="420" height="420"></canvas>
+</div>
+
+<!-- GAME CONTROL -->
+<div id="game" class="hidden">
+    <div class="info">
+        💰 <span id="money">0</span> $
+        &nbsp; | &nbsp;
+        🎯 <span id="turns">0</span> lượt
+    </div>
+
+    <div class="control">
+        <input
+    	id="bet"
+    	type="number"
+    	placeholder="Tiền cược đê"
+    	step="100"
+    	min="100"
+	>
+        <button id="spinBtn" onclick="spinWheel()">QUAY</button>
+    </div>
+</div>
+
+<script src="/static/script.js?v=final"></script>
+</body>
+</html>

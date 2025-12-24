@@ -1,0 +1,15 @@
+{
+  "start_money": 300,
+  "max_turns": 3,
+  "sectors": [
+    { "label": "x0", "weight": 20 },
+    { "label": "x1", "weight": 25 },
+    { "label": "x2", "weight": 25 },
+    { "label": "x3", "weight": 15 },
+    { "label": "x4", "weight": 10 },
+    { "label": "x5", "weight": 5 }
+  ],
+  "sound": {
+    "bg": "/static/sound/bg.mp3"
+  }
+}
