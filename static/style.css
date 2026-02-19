@@ -6,12 +6,12 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(
         135deg,
-        #FFC8DD,
-        #FFAFCC,
-        #BDE0FE,
-        #A2D2FF
+        #fff9e6,
+        #fff3bf,
+        #ffe69c,
+        #ffe066
     );
-    color: #333;
+    color: #6b5200;
     text-align: center;
 }
 
@@ -23,6 +23,8 @@ header {
     font-size: 36px;
     font-weight: bold;
     padding: 20px;
+    color: #8a6d00;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
 #currentPlayer {
@@ -50,7 +52,7 @@ header {
     height: 44px;
     font-size: 22px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
 }
 
 #volumeSlider {
@@ -58,7 +60,7 @@ header {
 }
 
 /* =======================
-   LEFT PANEL (RESULT + LEADERBOARD)
+   LEFT PANEL
 ======================= */
 #leftPanel {
     position: fixed;
@@ -75,34 +77,30 @@ header {
 
 /* RESULT BOX */
 #resultBox {
-    background: rgba(255,255,255,0.92);
+    background: rgba(255, 248, 214, 0.95);
     padding: 16px;
     border-radius: 14px;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.25);
 }
 
 /* LEADERBOARD */
 #leaderboard {
-    background: rgba(255,255,255,0.92);
+    background: rgba(255, 248, 214, 0.95);
     padding: 16px;
     border-radius: 14px;
 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.25);
     text-align: left;
 }
 
 #leaderboard h3 {
     margin-top: 0;
     margin-bottom: 10px;
-}
-
-#leaderboard ul {
-    padding-left: 18px;
-    margin: 0;
+    color: #8a6d00;
 }
 
 #leaderboard li {
@@ -120,11 +118,22 @@ header {
 #login input {
     padding: 10px;
     font-size: 16px;
+    border: 1px solid #ffd966;
+    border-radius: 6px;
 }
 
 #login button {
     padding: 10px 20px;
     font-size: 16px;
+    background: #ffd966;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#login button:hover {
+    background: #ffc107;
 }
 
 /* =======================
@@ -142,14 +151,16 @@ header {
     left: 50%;
     transform: translateX(-50%);
     font-size: 44px;
-    color: gold;
-    text-shadow: 0 0 12px rgba(255,215,0,0.8);
+    color: #ffcc00;
+    text-shadow: 0 0 12px rgba(255, 193, 7, 0.7);
     transition: opacity .3s;
+    z-index: 10;
 }
 
 canvas#wheel {
     border-radius: 50%;
-    background: white;
+    background: #fffdf2;
+    box-shadow: 0 0 30px rgba(255, 193, 7, 0.3);
     transition: filter .3s, opacity .3s;
 }
 
@@ -178,11 +189,22 @@ body:not(.started) .pointer {
 .control input {
     padding: 10px;
     width: 140px;
+    border: 1px solid #ffd966;
+    border-radius: 6px;
 }
 
 .control button {
     padding: 10px 20px;
     font-size: 16px;
+    background: #ffd966;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.control button:hover {
+    background: #ffc107;
 }
 
 /* =======================
@@ -195,11 +217,8 @@ body:not(.started) .pointer {
     z-index: 1;
 }
 
-/* Đảm bảo UI luôn nổi trên tuyết */
+/* UI nổi trên tuyết */
 body > *:not(#snow) {
     position: relative;
     z-index: 5;
-}
-.pointer {
-    z-index: 10;
 }
